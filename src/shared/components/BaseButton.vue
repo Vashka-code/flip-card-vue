@@ -3,18 +3,18 @@
     class="button"
     :class="{ disabled: props.disabled }"
     :disabled="props.disabled"
-    :onclick="props.handleClick"
+    @click="emit('handleClick')"
   >
-    {{ props.buttonText }}
+    <slot></slot>
   </button>
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
-  buttonText: string
   disabled?: boolean
-  handleClick?: void
 }>()
+
+const emit = defineEmits(['handleClick'])
 </script>
 
 <style lang="scss" scoped>

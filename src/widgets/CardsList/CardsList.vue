@@ -10,11 +10,9 @@
       </li>
     </ul>
 
-    <base-button
-      :button-text="'Start Animation'"
-      :disabled="isStartAnimation"
-      :handle-click="startAnimation"
-    />
+    <base-button :disabled="isStartAnimation" @handle-click="startAnimation">
+      Start Animation
+    </base-button>
   </div>
 </template>
 
